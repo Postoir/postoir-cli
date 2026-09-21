@@ -1,0 +1,54 @@
+{
+  "name": "postoir",
+  "version": "0.1.0",
+  "description": "Postoir command-line client and MCP integration",
+  "keywords": [
+    "postoir",
+    "social-media",
+    "social-media-management",
+    "social-media-publishing",
+    "content-scheduling",
+    "automation",
+    "cli",
+    "mcp",
+    "model-context-protocol",
+    "typescript"
+  ],
+  "author": {
+    "name": "Postoir",
+    "url": "https://postoir.com"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/postoir/postoir-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/postoir/postoir-cli/issues"
+  },
+  "homepage": "https://postoir.com",
+  "type": "module",
+  "bin": {
+    "postoir": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "skills",
+    "NOTICE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "test": "npm run build && node --test dist/test/**/*.test.js",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "prettier": "3.9.8",
+    "typescript": "^5.7.0"
+  }
+}
