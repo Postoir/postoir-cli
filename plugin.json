@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "postoir",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Postoir is a social media management platform for creating, organizing, scheduling, and publishing content across multiple social networks.",
   "author": {
     "name": "Postoir",
