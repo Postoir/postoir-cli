@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "postoir",
+  "version": "0.1.0",
+  "description": "Postoir is a social media management platform for creating, organizing, scheduling, and publishing content across multiple social networks.",
+  "author": {
+    "name": "Postoir",
+    "url": "https://postoir.com"
+  },
+  "homepage": "https://postoir.com",
+  "repository": "https://github.com/postoir/postoir-cli",
+  "license": "Apache-2.0",
+  "keywords": ["postoir", "social-media", "publishing", "scheduling", "mcp"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Postoir",
+        "shortDescription": "Draft, schedule, and publish social posts",
+        "longDescription": "Postoir connects an assistant to a Postoir workspace. Resolve accounts, create drafts, attach media, schedule or publish, and check delivery. The client handles sign-in. An accepted publication is not proof of delivery.",
+        "developerName": "Postoir",
+        "category": "Productivity",
+        "capabilities": ["Read", "Write"],
+        "websiteURL": "https://postoir.com",
+        "privacyPolicyURL": "https://postoir.com/privacy",
+        "termsOfServiceURL": "https://postoir.com/terms",
+        "defaultPrompt": [
+          "List my Postoir accounts and create a draft. Do not publish yet.",
+          "Schedule a post for one of my connected social accounts at a date and time I provide.",
+          "Check my latest Postoir publications and summarize the delivery status for every destination."
+        ],
+        "brandColor": "#9333EA",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png",
+        "logoDark": "./assets/logo-dark.png"
+      }
+    }
+  }
+}

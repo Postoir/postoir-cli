@@ -1,0 +1,12 @@
+{
+  "name": "postoir",
+  "version": "0.1.0",
+  "description": "Postoir is a social media management platform for creating, organizing, scheduling, and publishing content across multiple social networks.",
+  "contextFileName": "POSTOIR.md",
+  "mcpServers": {
+    "postoir": {
+      "type": "http",
+      "url": "https://postoir.com/mcp"
+    }
+  }
+}

@@ -165,9 +165,47 @@ postoir mcp serve
 
 `mcp config` does not embed your API key. The generated configuration runs `postoir mcp serve`, which communicates over standard input and output.
 
+## Plugins
+
+This repository is the Postoir plugin. It ships the Postoir skill and connects the assistant to the hosted MCP service at `https://postoir.com/mcp`. The client runs the Postoir sign-in flow. Keep API keys in the client credential store or a Postoir CLI profile.
+
+Marketplace installs use the Postoir MCP tools directly and do not install the `postoir` executable. The skill prefers MCP for account discovery, drafts, scheduling, publication, and delivery checks. Use the CLI or its local MCP adapter only when MCP is unavailable or an operation needs local filesystem access, especially uploading a file from disk.
+
+| Client                     | What it reads                                                           |
+| -------------------------- | ----------------------------------------------------------------------- |
+| Claude Code                | `.claude-plugin/` and `.mcp.json`                                       |
+| Cursor                     | `.cursor-plugin/` and `mcp.json`                                        |
+| Codex and ChatGPT          | `plugin.json`, `.codex-plugin/`, and `.agents/plugins/marketplace.json` |
+| GitHub Copilot and VS Code | `plugin.json` and `mcp.json`                                            |
+| Kiro                       | `plugin.json` and `mcp.json`                                            |
+| Grok                       | `.grok-plugin/` and `postoir-plugin/`                                   |
+| Gemini CLI                 | `gemini-extension.json`                                                 |
+
+```sh
+claude plugin marketplace add postoir/postoir-cli
+claude plugin install postoir@postoir
+
+grok plugin marketplace add postoir/postoir-cli
+grok plugin install postoir/postoir-cli --trust
+
+codex plugin marketplace add postoir/postoir-cli
+gemini extensions install https://github.com/postoir/postoir-cli
+```
+
+Copilot CLI also reads the Claude marketplace in `.claude-plugin/marketplace.json`. In Cursor, install the repository from the plugin marketplace, or copy it to `~/.cursor/plugins/local` to try it locally. Kiro installs the same repository as a power.
+
+The hosted server accepts the Postoir sign-in flow. For a static API key, or to upload a file from the local disk with `upload_media`, use the stdio adapter from the MCP section above.
+
+Opening this repository also exposes that hosted server through `.mcp.json`.
+
+Marketplace listing metadata and reviewer scenarios are maintained in
+[`MARKETPLACE_SUBMISSION.md`](MARKETPLACE_SUBMISSION.md). Production listing
+images live in `assets/`; keep them synchronized with the canonical Postoir
+brand files in `postera-base/public/logos/`.
+
 ## Agent skill
 
-The package includes a focused Postoir skill for Claude Code, Cursor, and custom skill directories:
+Plugin installs include the Postoir skill. For a client that only accepts a copied skill directory:
 
 ```sh
 postoir skills list

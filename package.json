@@ -33,8 +33,20 @@
   },
   "files": [
     "dist",
+    "assets",
     "skills",
-    "NOTICE"
+    "NOTICE",
+    "POSTOIR.md",
+    "plugin.json",
+    "mcp.json",
+    ".mcp.json",
+    "gemini-extension.json",
+    ".agents",
+    ".claude-plugin",
+    ".codex-plugin",
+    ".cursor-plugin",
+    ".grok-plugin",
+    "postoir-plugin"
   ],
   "engines": {
     "node": ">=22"

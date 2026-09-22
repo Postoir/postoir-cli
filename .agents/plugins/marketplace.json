@@ -1,0 +1,20 @@
+{
+  "name": "postoir",
+  "interface": {
+    "displayName": "Postoir"
+  },
+  "plugins": [
+    {
+      "name": "postoir",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

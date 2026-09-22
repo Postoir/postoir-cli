@@ -1,0 +1,13 @@
+{
+  "name": "postoir",
+  "version": "0.1.0",
+  "description": "Postoir is a social media management platform for creating, organizing, scheduling, and publishing content across multiple social networks.",
+  "author": {
+    "name": "Postoir"
+  },
+  "homepage": "https://postoir.com",
+  "repository": "https://github.com/postoir/postoir-cli",
+  "license": "Apache-2.0",
+  "keywords": ["postoir", "social-media", "publishing", "scheduling", "mcp"],
+  "logo": "assets/logo.png"
+}
