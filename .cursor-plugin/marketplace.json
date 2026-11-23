@@ -11,7 +11,7 @@
       "name": "postoir",
       "source": ".",
       "description": "Postoir is a social media management platform for creating, organizing, scheduling, and publishing content across multiple social networks.",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "author": {
         "name": "Postoir"
       },
