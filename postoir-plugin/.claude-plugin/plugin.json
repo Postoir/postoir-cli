@@ -8,6 +8,10 @@
     "url": "https://postoir.com"
   },
   "homepage": "https://postoir.com",
+  "documentationUrl": "https://postoir.com/developers",
+  "supportUrl": "https://postoir.com/contact",
+  "privacyPolicyUrl": "https://postoir.com/privacy",
+  "termsOfServiceUrl": "https://postoir.com/terms",
   "repository": "https://github.com/postoir/postoir-cli",
   "license": "Apache-2.0",
   "keywords": ["postoir", "social-media", "publishing", "scheduling", "mcp"]

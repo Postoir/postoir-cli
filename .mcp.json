@@ -2,8 +2,7 @@
   "mcpServers": {
     "postoir": {
       "type": "http",
-      "url": "https://postoir.com/mcp",
-      "oauth_resource": "https://postoir.com/mcp"
+      "url": "https://postoir.com/mcp"
     }
   }
 }

@@ -28,7 +28,7 @@ test("plugin manifests share the package identity and stay free of credentials",
   const pkg = await readJson("package.json");
   const manifests = [
     "plugin.json",
-    ".claude-plugin/plugin.json",
+    "postoir-plugin/.claude-plugin/plugin.json",
     ".cursor-plugin/plugin.json",
     ".codex-plugin/plugin.json",
     ".grok-plugin/plugin.json",
@@ -57,7 +57,7 @@ test("plugin manifests share the package identity and stay free of credentials",
   assert.deepEqual(mcp.mcpServers, { postoir: { type: "streamable-http", url: hosted } });
   const claudeMcp = await readJson(".mcp.json");
   assert.deepEqual(claudeMcp.mcpServers, {
-    postoir: { type: "http", url: hosted, oauth_resource: hosted },
+    postoir: { type: "http", url: hosted },
   });
   const gemini = await readJson("gemini-extension.json");
   assert.deepEqual(gemini.mcpServers, { postoir: { type: "http", url: hosted } });
@@ -92,6 +92,12 @@ test("plugin manifests share the package identity and stay free of credentials",
       packaged.some((entry) => path === entry || path.startsWith(`${entry}/`)),
       path,
     );
+
+  const claudeMarket = await readJson(".claude-plugin/marketplace.json");
+  const claudePlugins = claudeMarket.plugins as Array<{ source: string }>;
+  assert.equal(claudePlugins[0]?.source, "./postoir-plugin");
+  const claudePlugin = await readJson("postoir-plugin/.claude-plugin/plugin.json");
+  assert.equal(claudePlugin.privacyPolicyUrl, "https://postoir.com/privacy");
 
   const grokMarket = await readJson(".grok-plugin/marketplace.json");
   const grokPlugins = grokMarket.plugins as Array<{ source: { path: string } }>;

@@ -173,7 +173,7 @@ Marketplace installs use the Postoir MCP tools directly and do not install the `
 
 | Client                     | What it reads                                                           |
 | -------------------------- | ----------------------------------------------------------------------- |
-| Claude Code                | `.claude-plugin/` and `.mcp.json`                                       |
+| Claude Code                | `.claude-plugin/marketplace.json` and `postoir-plugin/`                 |
 | Cursor                     | `.cursor-plugin/` and `mcp.json`                                        |
 | Codex and ChatGPT          | `plugin.json`, `.codex-plugin/`, and `.agents/plugins/marketplace.json` |
 | GitHub Copilot and VS Code | `plugin.json` and `mcp.json`                                            |
